@@ -6,6 +6,7 @@ It includes a couple of quality settings to play with or customize.
 
 DISCLAIMER: This app was "Vibecoded" with Claude. What you see is what you get.
 
+![EasyImageGrid Screenshot](resources/screenshot.png)
 
 Built with Electron + React. PDF generation handled by a native AOT-compiled C# sidecar using SkiaSharp.
 
