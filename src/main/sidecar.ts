@@ -36,11 +36,12 @@ export interface GenerateParams {
 }
 
 function getSidecarPath(): { command: string; args: string[] } {
+  const ext = process.platform === 'win32' ? '.exe' : ''
   if (isDev) {
-    const binary = join(process.cwd(), 'sidecar-cs', 'dist', 'easyimagegrid-sidecar')
+    const binary = join(process.cwd(), 'sidecar-cs', 'dist', `easyimagegrid-sidecar${ext}`)
     return { command: binary, args: [] }
   }
-  const sidecarBinary = join(process.resourcesPath, 'sidecar', 'easyimagegrid-sidecar')
+  const sidecarBinary = join(process.resourcesPath, 'sidecar', `easyimagegrid-sidecar${ext}`)
   return {
     command: sidecarBinary,
     args: []

@@ -5,6 +5,22 @@
   "description": "EasyImageGrid — PDF Image Grid Creator",
   "license": "MIT",
   "author": "Eric-Daniel Beisswenger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EricBe15/EasyImageGrid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EricBe15/EasyImageGrid/issues"
+  },
+  "homepage": "https://github.com/EricBe15/EasyImageGrid",
+  "keywords": [
+    "pdf",
+    "image",
+    "grid",
+    "contact-sheet",
+    "electron",
+    "skia"
+  ],
   "main": "./out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",

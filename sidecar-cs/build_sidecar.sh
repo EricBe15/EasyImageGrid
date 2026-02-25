@@ -36,10 +36,11 @@ dotnet publish \
     -p:PublishAot=true \
     -o dist/
 
-# Rename to match expected binary name (strip .exe on Windows for consistency)
-BINARY="dist/easyimagegrid-sidecar"
-if [ -f "${BINARY}.exe" ] && [ ! -f "$BINARY" ]; then
-    mv "${BINARY}.exe" "$BINARY"
+# Report the built binary
+if [ -f "dist/easyimagegrid-sidecar.exe" ]; then
+    BINARY="dist/easyimagegrid-sidecar.exe"
+else
+    BINARY="dist/easyimagegrid-sidecar"
 fi
 
 echo "Build complete: ${BINARY}"

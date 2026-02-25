@@ -49,7 +49,8 @@ function getExtension(path: string): string {
 
 function getDefaultOutputPath(folderPath: string, folderName: string): string {
   const date = new Date().toISOString().slice(0, 10);
-  return `${folderPath}/${folderName}_${date}.pdf`;
+  const sep = folderPath.includes('\\') ? '\\' : '/';
+  return `${folderPath}${sep}${folderName}_${date}.pdf`;
 }
 
 function buildFolderSections(files: FileInfo[], rootPath: string): FolderSection[] {
@@ -184,7 +185,8 @@ function AppContent() {
         showToast(t.noImagesFound, 'error');
         return;
       }
-      const name = path.split('/').pop() || path.split('\\').pop() || t.folderFallback;
+      const sep = path.includes('\\') ? '\\' : '/';
+      const name = path.split(sep).pop() || t.folderFallback;
       setTopLevelFiles(topLevel);
       setAllFiles(all);
       setFolderPath(path);
