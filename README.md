@@ -1,6 +1,9 @@
 # EasyImageGrid
 
-Desktop app for generating PDF - contact sheets from images and folders. Pick a folder or drag-and-drop files, configure the grid layout, and get a print-ready A4 PDF with thumbnails and filenames.
+Easy Desktop app for generating PDF - contact sheets from images and folders. Pick a folder or drag-and-drop files, configure the grid layout, and get a print-ready A4 PDF with thumbnails and filenames. Faster and easier than Bridge or Lightroom.
+
+It includes a couple of quality settings to play with or customize.
+
 
 Built with Electron + React. PDF generation handled by a native AOT-compiled C# sidecar using SkiaSharp.
 
