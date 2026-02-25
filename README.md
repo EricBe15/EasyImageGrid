@@ -4,6 +4,8 @@ Easy Desktop app for generating PDF - contact sheets from images and folders. Pi
 
 It includes a couple of quality settings to play with or customize.
 
+DISCLAIMER: This app was "Vibecoded" with Claude. What you see is what you get.
+
 
 Built with Electron + React. PDF generation handled by a native AOT-compiled C# sidecar using SkiaSharp.
 
