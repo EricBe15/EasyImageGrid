@@ -1,0 +1,440 @@
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
+EasyImageGrid incorporates third-party software components. The following
+notices and licenses apply to these components. The original copyright
+notices and license texts are provided below.
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+
+Section A — Application Runtime (shipped in the packaged app)
+  1.  Electron
+  2.  Chromium
+  3.  Node.js
+  4.  React / React-DOM
+  5.  Framer Motion
+  6.  Lucide React
+
+Section B — C# Sidecar (shipped as native binary)
+  7.  SkiaSharp
+  8.  Skia
+  9.  .NET Runtime (NativeAOT)
+  10. libtiff
+
+Section C — Build Tools (used at build time, not shipped)
+  11. Vite (and bundled dependencies)
+  12. Tailwind CSS
+  13. LightningCSS
+  14. esbuild
+  15. Rollup
+  16. PostCSS
+  17. TypeScript
+
+================================================================================
+SECTION A — APPLICATION RUNTIME
+================================================================================
+
+--------------------------------------------------------------------------------
+1. Electron
+--------------------------------------------------------------------------------
+
+Copyright (c) Electron contributors
+Copyright (c) 2013-2020 GitHub Inc.
+
+License: MIT
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Repository: https://github.com/electron/electron
+
+--------------------------------------------------------------------------------
+2. Chromium
+--------------------------------------------------------------------------------
+
+Copyright 2015 The Chromium Authors. All rights reserved.
+
+License: BSD 3-Clause
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above
+     copyright notice, this list of conditions and the following
+     disclaimer in the documentation and/or other materials provided
+     with the distribution.
+   * Neither the name of Google Inc. nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Chromium incorporates numerous third-party libraries, each with their
+own licenses. A complete list is available at:
+https://source.chromium.org/chromium/chromium/src/+/main:third_party/
+and at chrome://credits in any Chromium-based browser.
+
+Repository: https://chromium.googlesource.com/chromium/src
+
+--------------------------------------------------------------------------------
+3. Node.js
+--------------------------------------------------------------------------------
+
+Copyright Node.js contributors. All rights reserved.
+
+License: MIT
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Node.js also includes V8, libuv, OpenSSL, and other components under
+their respective licenses. See: https://github.com/nodejs/node/blob/main/LICENSE
+
+Repository: https://github.com/nodejs/node
+
+--------------------------------------------------------------------------------
+4. React / React-DOM
+--------------------------------------------------------------------------------
+
+Copyright (c) Facebook, Inc. and its affiliates.
+
+License: MIT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Repository: https://github.com/facebook/react
+
+--------------------------------------------------------------------------------
+5. Framer Motion
+--------------------------------------------------------------------------------
+
+Copyright (c) 2018 Framer B.V.
+
+License: MIT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Repository: https://github.com/motiondivision/motion
+
+--------------------------------------------------------------------------------
+6. Lucide React
+--------------------------------------------------------------------------------
+
+Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022
+as part of Feather (MIT). All other copyright (c) for Lucide are held
+by Lucide Contributors 2022.
+
+License: ISC
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Repository: https://github.com/lucide-icons/lucide
+
+================================================================================
+SECTION B — C# SIDECAR (NATIVE BINARY)
+================================================================================
+
+--------------------------------------------------------------------------------
+7. SkiaSharp
+--------------------------------------------------------------------------------
+
+Copyright (c) 2015-2016 Xamarin, Inc.
+Copyright (c) 2017-2018 Microsoft Corporation
+
+License: MIT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Repository: https://github.com/mono/SkiaSharp
+
+--------------------------------------------------------------------------------
+8. Skia
+--------------------------------------------------------------------------------
+
+Skia is compiled into the SkiaSharp native libraries (libSkiaSharp.dylib,
+libSkiaSharp.so, libSkiaSharp.dll).
+
+Copyright (c) 2011 Google Inc. All rights reserved.
+
+License: BSD 3-Clause
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+
+  * Neither the name of the copyright holder nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Skia bundles additional third-party components (FreeType, HarfBuzz,
+libpng, zlib, libjpeg-turbo, libwebp, etc.) under their respective
+permissive licenses. See: https://github.com/google/skia/tree/main/third_party
+
+Repository: https://github.com/google/skia
+
+--------------------------------------------------------------------------------
+9. .NET Runtime (NativeAOT)
+--------------------------------------------------------------------------------
+
+The sidecar is compiled with .NET NativeAOT, which statically links
+portions of the .NET runtime into the binary.
+
+Copyright (c) .NET Foundation and Contributors
+
+License: MIT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+The .NET runtime includes additional third-party components under their
+respective licenses. See:
+https://github.com/dotnet/runtime/blob/main/THIRD-PARTY-NOTICES.TXT
+
+Repository: https://github.com/dotnet/runtime
+
+--------------------------------------------------------------------------------
+10. libtiff
+--------------------------------------------------------------------------------
+
+The sidecar dynamically loads libtiff at runtime from the operating system
+for TIFF/CMYK image support. libtiff is NOT bundled in the application
+binary; it is loaded from the system if available.
+
+Copyright (c) 1988-1997 Sam Leffler
+Copyright (c) 1991-1997 Silicon Graphics, Inc.
+
+License: BSD-like (permissive)
+
+Permission to use, copy, modify, distribute, and sell this software and
+its documentation for any purpose is hereby granted without fee, provided
+that (i) the above copyright notices and this permission notice appear in
+all copies of the software and related documentation, and (ii) the names of
+Sam Leffler and Silicon Graphics may not be used in any advertising or
+publicity relating to the software without the specific, prior written
+permission of Sam Leffler and Silicon Graphics.
+
+THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND,
+EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY
+WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR
+ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND,
+OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF
+LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+OF THIS SOFTWARE.
+
+Repository: https://gitlab.com/libtiff/libtiff
+
+================================================================================
+SECTION C — BUILD TOOLS (NOT SHIPPED IN APPLICATION)
+================================================================================
+
+The following tools are used to build EasyImageGrid but are NOT distributed
+with the application. They are listed here for completeness.
+
+--------------------------------------------------------------------------------
+11. Vite
+--------------------------------------------------------------------------------
+
+Copyright (c) 2019-present, VoidZero Inc. and Vite contributors
+License: MIT
+Repository: https://github.com/vitejs/vite
+
+Vite bundles numerous dependencies (listed in its LICENSE.md) under MIT,
+Apache-2.0, BSD-2-Clause, ISC, BlueOak-1.0.0, and CC0-1.0 licenses.
+
+--------------------------------------------------------------------------------
+12. Tailwind CSS
+--------------------------------------------------------------------------------
+
+Copyright (c) Tailwind Labs, Inc.
+License: MIT
+Repository: https://github.com/tailwindlabs/tailwindcss
+
+--------------------------------------------------------------------------------
+13. LightningCSS
+--------------------------------------------------------------------------------
+
+Copyright (c) Devon Govett
+License: MPL-2.0
+Repository: https://github.com/parcel-bundler/lightningcss
+
+Used as a CSS transformation tool at build time. LightningCSS itself is not
+distributed with the application. The CSS output produced by LightningCSS
+is not subject to the MPL-2.0 license.
+
+--------------------------------------------------------------------------------
+14. esbuild
+--------------------------------------------------------------------------------
+
+Copyright (c) 2020 Evan Wallace
+License: MIT
+Repository: https://github.com/evanw/esbuild
+
+--------------------------------------------------------------------------------
+15. Rollup
+--------------------------------------------------------------------------------
+
+Copyright (c) 2017 [these people](https://github.com/rollup/rollup/graphs/contributors)
+License: MIT
+Repository: https://github.com/rollup/rollup
+
+--------------------------------------------------------------------------------
+16. PostCSS
+--------------------------------------------------------------------------------
+
+Copyright 2013 Andrey Sitnik <andrey@sitnik.ru>
+License: MIT
+Repository: https://github.com/postcss/postcss
+
+--------------------------------------------------------------------------------
+17. TypeScript
+--------------------------------------------------------------------------------
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+License: Apache-2.0
+Repository: https://github.com/microsoft/TypeScript
+
+================================================================================
+
+This file was last updated on 2026-02-21.

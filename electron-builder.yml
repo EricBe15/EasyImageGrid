@@ -1,0 +1,33 @@
+appId: com.easyimagegrid.app
+productName: EasyImageGrid
+directories:
+  buildResources: resources
+  output: dist
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!sidecar-cs/*'
+  - '!electron.vite.config.*'
+  - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+extraResources:
+  - from: sidecar-cs/dist/
+    to: sidecar
+    filter:
+      - 'easyimagegrid-sidecar'
+      - '*.dylib'
+      - '*.so'
+      - '*.dll'
+mac:
+  target:
+    - target: dmg
+      arch: arm64
+  artifactName: ${name}-${version}-mac.${ext}
+win:
+  target:
+    - nsis
+  artifactName: ${name}-${version}-win.${ext}
+linux:
+  target:
+    - AppImage
+  artifactName: ${name}-${version}-linux.${ext}

@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --brand-color: #81bb00;
+  --brand-dark-color: #6a9900;
+
+  /* Light mode colors */
+  --bg-page: #f9fafb; /* gray-50 */
+  --bg-card: #ffffff;
+  --text-main: #111827; /* gray-900 */
+  --border-main: #e5e7eb; /* gray-200 */
+
+  /* Glass variables — light */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.dark {
+  /* Dark mode colors — neutral grays (no blue tint) */
+  --bg-page: #0a0a0a; /* neutral-950 */
+  --bg-card: #171717; /* neutral-900 */
+  --text-main: #fafafa; /* neutral-50 */
+  --border-main: #262626; /* neutral-800 */
+
+  /* Glass variables — dark */
+  --glass-bg: rgba(23, 23, 23, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+@theme {
+  --color-brand: var(--brand-color);
+  --color-brand-dark: var(--brand-dark-color);
+}
+
+/* Force Tailwind to use the .dark class for the dark: variant */
+@variant dark (&:where(.dark, .dark *));
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background: #f0f1f3;
+  color: var(--text-main);
+  @apply min-h-screen font-sans transition-colors duration-300;
+}
+
+.dark body {
+  background: #0a0a0a;
+}
+
+/* macOS traffic light padding */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.btn-primary {
+  @apply flex items-center gap-2 px-4 py-2 bg-brand hover:bg-brand-dark text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  @apply flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 font-semibold rounded-lg hover:bg-white/70 dark:hover:bg-white/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  @apply rounded-xl overflow-hidden transition-colors duration-300;
+}
+
+.input-field {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  @apply w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all text-gray-900 dark:text-gray-100;
+}
+
+.input-field:disabled {
+  @apply opacity-40 cursor-not-allowed;
+}
+
+/* Accessibility: visible focus outlines */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.status-badge {
+  @apply px-2 py-1 rounded text-xs font-bold uppercase tracking-wider;
+}

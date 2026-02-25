@@ -1,0 +1,18 @@
+node_modules/
+out/
+dist/
+.DS_Store
+*.dmg
+
+# Claude Code
+.claude/
+
+# C# sidecar build artifacts
+sidecar-cs/bin/
+sidecar-cs/obj/
+sidecar-cs/dist/
+
+# Benchmark files
+bench_images/*
+!bench_images/.gitkeep
+bench_results.json
