@@ -8,7 +8,8 @@ app.setName('EasyImageGrid')
 function createWindow(): BrowserWindow {
   const mainWindow = new BrowserWindow({
     width: 900,
-    height: 700,
+    height: 750,
+    autoHideMenuBar: true,
     resizable: false,
     show: false,
     titleBarStyle: 'hiddenInset',
