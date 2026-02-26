@@ -23,7 +23,7 @@ mac:
   target:
     - target: dmg
       arch: arm64
-  artifactName: ${name}-${version}-mac.${ext}
+  artifactName: ${name}-${version}-mac-${arch}.${ext}
 win:
   target:
     - nsis
