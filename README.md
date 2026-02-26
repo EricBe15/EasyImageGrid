@@ -91,4 +91,7 @@ Both paths use a unified two-step resize strategy: bilinear+mipmap bulk reductio
 
 ## License
 
+Distributed under the MIT License.  
+Feel free to use, modify, and share.
+
 (c) 2026 E.-D. Beisswenger
