@@ -28,6 +28,18 @@ Built with Electron + React. PDF generation handled by a native AOT-compiled C# 
 - Full Unicode support for filenames and titles (including umlauts, accented characters)
 - Supported formats: TIFF (including CMYK), JPEG, PNG, WebP, and RAW (CR2, CR3, NEF, ARW, DNG, ORF, RW2, RAF, PEF, SRW)
 
+## Installation
+
+### macOS
+
+If macOS shows a warning that the app is "damaged" or "may contain malware," this is because the app is not notarized with Apple. To fix this, open Terminal and run:
+
+```bash
+xattr -cr /Applications/EasyImageGrid.app
+```
+
+Then open the app normally.
+
 ## Development
 
 ### Prerequisites
