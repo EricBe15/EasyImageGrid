@@ -108,7 +108,3 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
-.status-badge {
-  @apply px-2 py-1 rounded text-xs font-bold uppercase tracking-wider;
-}
