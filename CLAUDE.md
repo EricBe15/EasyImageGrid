@@ -80,7 +80,6 @@ PDF images are embedded as JPEG via `SKDocumentPdfMetadata.EncodingQuality`, con
 --filename-font-size N   Filename text size in pt, 6-14 (default: 8)
 --title-font-size N      Title text size in pt, 8-24 (default: 14)
 --jpeg-compression N     JPEG encoding quality 1-100 (default: 92)
---benchmark              Emit timing data for performance profiling
 ```
 
 ## Sidecar Path Resolution

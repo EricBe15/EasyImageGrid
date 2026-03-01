@@ -29,7 +29,6 @@ export interface GenerateParams {
   headerSpace?: number
   filenameFontSize?: number
   titleFontSize?: number
-  benchmark?: boolean
   inputFiles?: string[]
   jpegCompression?: number
 }

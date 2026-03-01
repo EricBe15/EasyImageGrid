@@ -11,8 +11,3 @@ dist/
 sidecar-cs/bin/
 sidecar-cs/obj/
 sidecar-cs/dist/
-
-# Benchmark files
-bench_images/*
-!bench_images/.gitkeep
-bench_results.json

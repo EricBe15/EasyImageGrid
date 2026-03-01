@@ -30,7 +30,6 @@ export interface GenerateParams {
   headerSpace?: number
   filenameFontSize?: number
   titleFontSize?: number
-  benchmark?: boolean
   inputFiles?: string[]
   jpegCompression?: number
 }
@@ -102,10 +101,6 @@ export function buildArgs(params: GenerateParams): string[] {
 
   if (params.jpegCompression !== undefined) {
     args.push('--jpeg-compression', String(params.jpegCompression))
-  }
-
-  if (params.benchmark) {
-    args.push('--benchmark')
   }
 
   return args
