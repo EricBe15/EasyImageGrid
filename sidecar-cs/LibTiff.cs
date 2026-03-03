@@ -15,9 +15,11 @@ public static unsafe class LibTiff
     {
         var paths = new List<string>();
 
-        // Bundled dylib next to the sidecar binary (works in dev and packaged)
+        // Bundled library next to the sidecar binary (works in dev and packaged)
         var baseDir = AppContext.BaseDirectory;
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            paths.Add(Path.Combine(baseDir, "tiff.dll"));
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             paths.Add(Path.Combine(baseDir, "libtiff.6.dylib"));
         else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             paths.Add(Path.Combine(baseDir, "libtiff.so.6"));

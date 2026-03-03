@@ -68,7 +68,8 @@ if [[ "$RID" == osx-* ]]; then
     done
 
     if [ -z "$BREW_LIB" ]; then
-        echo "Warning: Homebrew libtiff not found — TIFF support will rely on system libs at runtime"
+        echo "Error: Homebrew libtiff not found. Install it with: brew install libtiff" >&2
+        exit 1
     else
         echo "Found Homebrew libs in: $BREW_LIB"
 
@@ -115,4 +116,71 @@ if [[ "$RID" == osx-* ]]; then
 
         echo "libtiff bundling complete."
     fi
+fi
+
+# --- Windows: bundle libtiff and its dependencies via vcpkg ---
+if [[ "$RID" == win-* ]]; then
+    echo ""
+    echo "Bundling libtiff and dependencies for Windows..."
+
+    DLLS=(
+        "tiff.dll"
+        "zlib1.dll"
+        "jpeg62.dll"
+        "liblzma.dll"
+    )
+
+    # Find vcpkg installed binaries
+    VCPKG_BIN=""
+
+    # Check VCPKG_ROOT first, then common locations
+    VCPKG_CANDIDATES=(
+        "${VCPKG_ROOT:-}/installed/x64-windows/bin"
+        "$HOME/vcpkg/installed/x64-windows/bin"
+        "/c/vcpkg/installed/x64-windows/bin"
+        "/c/src/vcpkg/installed/x64-windows/bin"
+    )
+
+    for candidate in "${VCPKG_CANDIDATES[@]}"; do
+        if [ -f "$candidate/tiff.dll" ]; then
+            VCPKG_BIN="$candidate"
+            break
+        fi
+    done
+
+    # If not found, bootstrap vcpkg and install tiff
+    if [ -z "$VCPKG_BIN" ]; then
+        echo "vcpkg libtiff not found — installing via vcpkg..."
+
+        VCPKG_DIR="$SCRIPT_DIR/.vcpkg"
+        if [ ! -f "$VCPKG_DIR/vcpkg" ] && [ ! -f "$VCPKG_DIR/vcpkg.exe" ]; then
+            echo "  Cloning vcpkg..."
+            git clone --depth 1 https://github.com/microsoft/vcpkg.git "$VCPKG_DIR"
+            bash "$VCPKG_DIR/bootstrap-vcpkg.sh" -disableMetrics
+        fi
+
+        echo "  Installing tiff:x64-windows..."
+        "$VCPKG_DIR/vcpkg.exe" install tiff:x64-windows
+
+        VCPKG_BIN="$VCPKG_DIR/installed/x64-windows/bin"
+    fi
+
+    if [ ! -f "$VCPKG_BIN/tiff.dll" ]; then
+        echo "Error: Failed to obtain libtiff DLLs" >&2
+        exit 1
+    fi
+
+    echo "Found vcpkg libs in: $VCPKG_BIN"
+
+    for dll in "${DLLS[@]}"; do
+        src="$VCPKG_BIN/$dll"
+        if [ ! -f "$src" ]; then
+            echo "  Warning: $src not found, skipping"
+            continue
+        fi
+        cp "$src" "dist/$dll"
+        echo "  Copied $dll"
+    done
+
+    echo "libtiff bundling complete."
 fi

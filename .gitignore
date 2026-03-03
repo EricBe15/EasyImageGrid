@@ -11,3 +11,4 @@ dist/
 sidecar-cs/bin/
 sidecar-cs/obj/
 sidecar-cs/dist/
+sidecar-cs/.vcpkg/
