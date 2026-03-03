@@ -11,14 +11,31 @@ namespace EasyImageGridSidecar;
 /// </summary>
 public static unsafe class LibTiff
 {
-    private static readonly string[] SearchPaths = [
-        "/opt/homebrew/lib/libtiff.dylib",
-        "/usr/local/lib/libtiff.dylib",
-        "/usr/lib/x86_64-linux-gnu/libtiff.so.6",
-        "/usr/lib/x86_64-linux-gnu/libtiff.so",
-        "/usr/lib/libtiff.so.6",
-        "/usr/lib/libtiff.so",
-    ];
+    private static string[] BuildSearchPaths()
+    {
+        var paths = new List<string>();
+
+        // Bundled dylib next to the sidecar binary (works in dev and packaged)
+        var baseDir = AppContext.BaseDirectory;
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            paths.Add(Path.Combine(baseDir, "libtiff.6.dylib"));
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            paths.Add(Path.Combine(baseDir, "libtiff.so.6"));
+
+        // System paths as fallback
+        paths.AddRange([
+            "/opt/homebrew/lib/libtiff.dylib",
+            "/usr/local/lib/libtiff.dylib",
+            "/usr/lib/x86_64-linux-gnu/libtiff.so.6",
+            "/usr/lib/x86_64-linux-gnu/libtiff.so",
+            "/usr/lib/libtiff.so.6",
+            "/usr/lib/libtiff.so",
+        ]);
+
+        return paths.ToArray();
+    }
+
+    private static readonly string[] SearchPaths = BuildSearchPaths();
 
     // Only need two functions — TIFFOpen, TIFFClose, and TIFFReadRGBAImageOriented.
     // All non-variadic, so safe on ARM64.

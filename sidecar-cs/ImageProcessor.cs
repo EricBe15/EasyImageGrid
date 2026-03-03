@@ -116,10 +116,24 @@ public static class ImageProcessor
     /// <summary>
     /// SkiaSharp fast path: scaled JPEG decode (libjpeg-turbo decodes at 1/2, 1/4, 1/8
     /// natively), then two-step resize via SkiaSharp.
+    /// Files are read into memory first via .NET IO for reliable network/NAS support,
+    /// since Skia's native file-open can fail silently on SMB/NFS paths.
     /// </summary>
     private static SKBitmap? TrySkiaSharpFastPath(string imageFile, int targetW, int targetH)
     {
-        using var codec = SKCodec.Create(imageFile);
+        byte[] fileBytes;
+        try
+        {
+            fileBytes = File.ReadAllBytes(imageFile);
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Warning: Cannot read file {Path.GetFileName(imageFile)}: {ex.Message}");
+            return null;
+        }
+
+        using var skData = SKData.CreateCopy(fileBytes);
+        using var codec = SKCodec.Create(skData);
         if (codec == null) return null;
 
         int srcW = codec.Info.Width;
@@ -274,9 +288,19 @@ public static class ImageProcessor
         }
 
         // SkiaSharp codec (header-only, fast for JPEG/PNG/WebP)
-        using var codec = SKCodec.Create(file);
-        if (codec != null)
-            return (double)codec.Info.Width / codec.Info.Height;
+        // Read into memory for reliable NAS/network path support
+        try
+        {
+            var bytes = File.ReadAllBytes(file);
+            using var skData = SKData.CreateCopy(bytes);
+            using var codec = SKCodec.Create(skData);
+            if (codec != null)
+                return (double)codec.Info.Width / codec.Info.Height;
+        }
+        catch
+        {
+            // Fall through to default ratio
+        }
 
         return 3.0 / 2.0;
     }
